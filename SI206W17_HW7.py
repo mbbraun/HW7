@@ -69,13 +69,10 @@ def get_user_tweets(username):
 		f.write(json.dumps(CACHE_DICTION))
 		f.close()
 
-	# twenty_tweets = []
-	# for tweet in twitter_results:
-	# 	twenty_tweets.append(tweet)
 	return twitter_results[:20]
 
 
-print (get_user_tweets("umich"))
+#print (get_user_tweets("umich"))
 
 
 
@@ -106,16 +103,6 @@ cur.execute(table_spec)
 
 umsi_tweets = get_user_tweets("UMSI")
 
-
-
-
-print (umsi_tweets[0]['text'])
-print(umsi_tweets[0]['id'])
-print(umsi_tweets[0]['created_at'])
-print (umsi_tweets[0]['id_str'])
-print (umsi_tweets[0]['user']['name'])
-print (umsi_tweets[0]['user']['screen_name'])
-print (umsi_tweets[0]['retweet_count'])
 
 
 # Use a for loop, the cursor you defined above to execute INSERT statements, that insert the data from each of the tweets in umsi_tweets into the correct columns in each row of the Tweets database table.
@@ -155,7 +142,7 @@ more_than_2_rts = result.fetchall()
 statement = "SELECT tweet_text FROM Tweets WHERE instr(tweet_text, 'RT')"
 result = cur.execute(statement)
 first_rt = result.fetchone()[0]
-print (first_rt)
+
 
 
 # Finally, done with database stuff for a bit: write a line of code to close the cursor to the database.
@@ -180,7 +167,7 @@ def get_twitter_users(s):
 	return set(re.findall(exp,s))
 
 
-print (get_twitter_users("@umsi and @all"))
+#print (get_twitter_users("@umsi and @all"))
 
 
 
