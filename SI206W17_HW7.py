@@ -159,7 +159,7 @@ print (first_rt)
 
 
 # Finally, done with database stuff for a bit: write a line of code to close the cursor to the database.
-
+conn.close()
 
 
 ## [PART 3] - Processing data
